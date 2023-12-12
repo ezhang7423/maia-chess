@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #Read the raw pgns from lichess and filter out the elo ranges we care about
+cd $(dirname $0)
 
 mkdir ../data/pgns_ranged_filtered/
 for i in {1000..2000..100}; do
@@ -37,4 +38,4 @@ for i in {1000..2000..100}; do
 done
 
 #Now we have all the pgns in blocks we can randomly sample and creat testing and training sets of 60 and 3 blocks respectively
-python3 move_training_set.py
+python3 replication-move_training_set.py
